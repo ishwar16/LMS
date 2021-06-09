@@ -15,7 +15,7 @@
   }
   </style>
 </head>
-<body>
+<body class=" bg-dark">
 <!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
   <a class="navbar-brand" href="#">USER-NAME</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -38,20 +38,17 @@
     </ul>
   </div>  
 </nav> -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark font-weight-bold text-uppercase" style="background-color: black;">
     <div class="navbar-collapse w-100 dual-collapse2 order-1 order-md-0">
         <ul class="navbar-nav ml-auto text-center">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Books</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">History</a>
+            <li class="nav-item text-primary">
+                <a class="nav-link text-primary" href="#">History</a>
             </li>
         </ul>
     </div>
     <div class="mx-auto my-2 order-0 order-md-1 position-relative">
         <a class="mx-auto" href="#">
-            <img src="//placehold.it/60/ccff00" class="rounded-circle">
+            <img src="{{url_for('static',filename='img/users/sr.jpg')}}" class="rounded-circle" width="60" height="60">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
             <span class="navbar-toggler-icon"></span>
@@ -59,11 +56,8 @@
     </div>
     <div class="navbar-collapse w-100 dual-collapse2 order-2 order-md-2">
         <ul class="navbar-nav mr-auto text-center">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Profile</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Logout</a>
+            <li class="nav-item text-primary">
+                <a class="nav-link text-primary" href="#">Logout</a>
             </li>
         </ul>
     </div>
@@ -71,7 +65,7 @@
 <div class="container" style="margin-top:30px">
   <div class="row">
     <div class="col-sm-4">
-      <h2>About </h2>
+      <!-- <h2>About </h2>
       <h5>Sandeep Rathor</h5>
       <img class="img-thumbnail" src="{{url_for('static',filename='img/users/sr.jpg')}}">
       <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
@@ -86,11 +80,29 @@
         <li class="nav-item">
           <p>Mobile: 9999999999</p>
         </li>
-      </ul>
+      </ul> -->
+        <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{url_for('static',filename='img/users/sr.jpg')}}">
+        <div class="card-body">
+            <h5 class="card-title">Sandeep Rathore</h5>
+            <p class="card-text">Second Year Student of CS Department.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Pune</li>
+            <li class="list-group-item">something@gmail.com</li>
+            <li class="list-group-item">9999 99999</li>
+        </ul>
+        <div class="card-body">
+            <a href="#" class="card-link">Instagram</a>
+            <a href="#" class="card-link">Twitter</a>
+        </div>
+        </div>
       <hr class="d-sm-none">
     </div>
-    <div class="col-sm-8 ">
+    <div class="col-sm-8 bg-light rounded">
+        <br>
         <h2>My Collection</h2>
+        <br>
         <ul class="list-unstyled">
             <li class="media">
                 <img class="col-md-3" src="{{url_for('static',filename='img/anandMat.jpg')}}" height="200" width="132">
@@ -124,6 +136,7 @@
     </div>
   </div>
 </div>
+<br>
 
 <div class="jumbotron text-center" style="margin-bottom:0">
   <p>Footer</p>
