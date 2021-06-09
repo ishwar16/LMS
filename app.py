@@ -6,15 +6,15 @@ app = Flask(__name__)
 def home():
     return render_template("login.html")
 
-@app.route("/homepage") 
-def homepage():
-    return render_template("homepage.html")
+@app.route("/user") 
+def user():
+    return render_template("user.html")
 
-@app.route("/login", methods =["POST", "GET"]) 
+@app.route("/login", methods =["POST", "GET"])
 def login():
     username = request.args.get("email")
     pwd = request.args.get("pswd")
-    return redirect(url_for('homepage'))
+    return redirect(url_for('user'))
 
 if __name__ == "__main__":
     app.run(debug=True)
