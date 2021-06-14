@@ -1,0 +1,44 @@
+/**Adelle Regular**/
+@font-face {
+    font-family: "Adelle";
+    font-style: normal;
+    font-weight: 400;
+    src:url("Adelle-Regular.ttf") format('truetype');
+}
+/** Montserrat Regular **/
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 400;
+    font-style: normal;
+    src: url("Montserrat-Regular.ttf") format('truetype');
+}
+/** Montserrat Medium **/
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 500;
+    font-style: normal;
+    src: url("Montserrat-Medium.ttf") format('truetype');
+}
+/** Raleway Regular **/
+@font-face {
+    font-family: "Raleway";
+    font-weight: 400;
+    font-style: normal;
+    src: url("Raleway-Regular.ttf") format('truetype');
+}
+/** Raleway Medium **/
+@font-face {
+    font-family: "Raleway";
+    font-weight: 500;
+    font-style: normal;
+    src: url("Raleway-Medium.ttf") format('truetype');
+}
+.Adelle{
+    font-family: Adelle;
+}
+.Montserrat{
+    font-family: Montserrat;
+}
+.Raleway{
+    font-family: Raleway;
+}

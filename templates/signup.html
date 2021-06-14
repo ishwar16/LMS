@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>LMS | SignUp</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="{{url_for('static',filename='img/IconWhite.png')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/fonts/font.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/login.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </head>
+    <style>
+    </style>
+  </head>
+  <body class="text-center bg-light">
+    <div class="container form-signup bg-white Montserrat" >
+      <div class="row">
+        <div class="col-sm-6 Data" style="margin: auto 0;">
+          <img class="mb-4 rounded-circle" src="{{url_for('static',filename='img/userPhotoBlack.png')}}" alt="User's Photo" title="UserPhoto" width="140" height="140">
+          <h3 class="mb-4 font-weight-bold" >Details</h3>
+          <label for="Name" class="sr-only">Name</label>
+          <input type="email" class="form-control" title="Name" placeholder="Name" required disabled>
+          <label for="MobileNum" class="sr-only">Mobile Number</label>
+          <input type="password" class="form-control" title="Mobile Number" placeholder="Mobile Number" required disabled>
+          <label for="Address" class="sr-only">Address</label>
+          <input type="password" class="form-control" title="Address" placeholder="Address" required disabled>
+        </div>
+        <div class="col-sm-1">
+          <hr class="d-sm-none">
+          <div class="line"></div>
+        </div>
+        <form class="col-sm-5" name="SignUp" methods="POST" onsubmit="return validateSignup()">
+          <img class="mb-4" src="{{url_for('static',filename='img/IconBlack.png')}}" alt="LMS icon" title="Library Management System" width="72" height="72">
+          <h3 class="mb-4 font-weight-bold" >Sign Up</h3>
+          <label for="inputEmail" class="sr-only">Email address</label>
+          <input type="email" id="inputEmail" class="form-control" name="EmailId" title="Email Address" placeholder="Email address" value="" required autofocus="">
+          <label for="inputPassword" class="sr-only">Password</label>
+          <input type="password" id="inputPassword" class="form-control" name="Password" title="Password" placeholder="Password" value="" required>
+          <label for="inputConfirmPassword" class="sr-only">Confirm Password</label>
+          <input type="password" id="inputConfirmPassword" class="form-control" name="CPassword" title="Confirm Password" placeholder="Confirm Password" value="" required>
+          <input type="hidden" name="dataInServer" value="false">
+          <button class="btn btn-lg btn-primary btn-color btn-block" type="submit">Sign up</button>
+          <p class="font-size mt-3">Already a Member, <a href="signin.html">Signin here</a></p>
+        </form>
+      </div>
+      <p class="mt-2 mb-3 text-muted" id="demo">© 2020-2021</p>
+    </div>
+    <div class="Montserrat alert alert-danger alert-dismissible fade show error" role="alert">
+      <strong>ERROR: </strong><span id="alert-text">You should check in on some of those fields below.</span>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <script>      
+      function error(str){
+        document.getElementById('alert-text').innerHTML += str;
+      }
+      function validateSignup(){
+        var email = document.forms["SignUp"]["EmailId"].value;
+        var pass = document.forms["SignUp"]["Password"].value;
+        var cpass = document.forms["SignUp"]["CPassword"].value;
+        var emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        var passRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+        // console.log(email+" | "+(!email.match(emailRegex))+"\n"+pass+" | "+(!pass.match(passRegex))+"\n"+cpass+" | "+(pass != cpass));
+        if(!email.match(emailRegex) ){
+          error("Email is Wrong");
+          return false;
+        }
+        else if(!pass.match(passRegex)){
+        	error("Password should have Atleast 1 Symbol, 1 Number, 1 Uppercase and 1 Lowercase Character and length of 8.");
+          return false;
+        }
+        else if(pass != cpass){
+        	error("Password does not match");
+        	return false;
+        }
+        return true;
+      }
+    </script>
+  </body>
+</html>

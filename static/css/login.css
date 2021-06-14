@@ -1,1 +1,138 @@
+:root{
+  --mainTextColor: #00bf8f;
+  --maingradientFunc: linear-gradient(to left, #001510, #00bf8f);
+  --mainwgradientFunc: -webkit-linear-gradient(to left, #001510, #00bf8f);
+  --mainHovergradientFunc: linear-gradient(to right, #001510, #00bf8f);
+  --mainHoverwgradientFunc: -webkit-linear-gradient(to right, #001510, #00bf8f);
+  --mainvTextColor: #014736;
+}
+html,
+body {
+  height: 100%;
+}
 
+body {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding-top: 40px;
+  /* padding-bottom: 40px;
+  background: #000046;
+  background: -webkit-linear-gradient(to right, #1CB5E0, #000046);
+  background: linear-gradient(to right, #1CB5E0, #000046); */
+  background: var(--mainTextColor);  /* fallback for old browsers */
+background: var(--mainwgradientFunc);  /* Chrome 10-25, Safari 5.1-6 */
+background: var(--maingradientFunc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 35px;
+  padding-bottom: 0px;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 2px solid none;
+}
+
+a{
+  color: var(--mainTextColor);
+}
+
+a:hover{
+  color: var(--mainTextColor);
+}
+
+a:visited{
+  color: var(--mainvTextColor);
+}
+
+.form-signup {
+  width: 100%;
+  max-width: 800px;
+  padding: 35px;
+  padding-bottom: 0px;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 2px solid none;
+}
+
+.form-signin .checkbox{
+  font-weight: 400;
+}
+
+.form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.form-control:focus {
+  color: var(--blue);
+  z-index: 2;
+}
+.font-size{
+  font-size: 12px;
+}
+
+.btn-color{
+  background: var(--mainTextColor);  /* fallback for old browsers */
+  background: var(--mainwgradientFunc);  /* Chrome 10-25, Safari 5.1-6 */
+  background: var(--maingradientFunc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.line{
+  border-right: 2px solid var(--blue);
+  height: 100%;
+  width: 50%;
+}
+
+
+@media screen and (max-width: 867px) {
+  .form-signup {
+    width: 700px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .form-signup {
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 667px) {
+  .form-signup {
+    width: 500px;
+  }
+}
+
+@media screen and (max-width: 574px) {
+  .form-signup {
+    margin-top: 190px;
+    width: 330px;
+  }
+  .line{
+    border: none;
+    height: 10px;
+    width: 330px;
+  }
+  hr{
+    height: 1px;
+    background-color: var(--blue);
+    margin: 0;
+  }
+}
+.alert{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
