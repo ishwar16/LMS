@@ -2,19 +2,17 @@ from flask import Flask,redirect, url_for, request, render_template
 
 app = Flask(__name__)
 
-@app.route("/") 
-def home():
+@app.route("/signin") 
+def signin():
     return render_template("signin.html")
 
-@app.route("/user") 
+@app.route("/signup") 
+def signup():
+    return render_template("signup.html")
+
+@app.route("/") 
 def user():
     return render_template("user.html")
 
-@app.route("/login", methods =["POST", "GET"])
-def login():
-    username = request.args.get("email")
-    pwd = request.args.get("pswd")
-    return redirect(url_for('user'))
-
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0",debug=True)

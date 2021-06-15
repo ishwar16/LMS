@@ -15,11 +15,11 @@
     <style>
     </style>
   </head>
-  <body class="text-center bg-light">
-    <div class="container form-signup bg-white Montserrat" >
+  <body class="text-center">
+    <div class="container form-signup Montserrat" >
       <div class="row">
-        <div class="col-sm-6 Data" style="margin: auto 0;">
-          <img class="mb-4 rounded-circle" src="{{url_for('static',filename='img/userPhotoBlack.png')}}" alt="User's Photo" title="UserPhoto" width="140" height="140">
+        <div class="col-sm-5 Data" style="margin: auto 0;">
+          <img class="mb-4 rounded-circle img" src="{{url_for('static',filename='img/userPhotoBlack.png')}}" alt="User's Photo" title="UserPhoto" width="140" height="140">
           <h3 class="mb-4 font-weight-bold" >Details</h3>
           <label for="Name" class="sr-only">Name</label>
           <input type="email" class="form-control" title="Name" placeholder="Name" required disabled>
@@ -28,12 +28,12 @@
           <label for="Address" class="sr-only">Address</label>
           <input type="password" class="form-control" title="Address" placeholder="Address" required disabled>
         </div>
-        <div class="col-sm-1">
+        <div class="col-sm-2">
           <hr class="d-sm-none">
           <div class="line"></div>
         </div>
         <form class="col-sm-5" name="SignUp" methods="POST" onsubmit="return validateSignup()">
-          <img class="mb-4" src="{{url_for('static',filename='img/IconBlack.png')}}" alt="LMS icon" title="Library Management System" width="72" height="72">
+          <img class="mb-4 img" src="{{url_for('static',filename='img/IconBlack.png')}}" alt="LMS icon" title="Library Management System" width="72" height="72">
           <h3 class="mb-4 font-weight-bold" >Sign Up</h3>
           <label for="inputEmail" class="sr-only">Email address</label>
           <input type="email" id="inputEmail" class="form-control" name="EmailId" title="Email Address" placeholder="Email address" value="" required autofocus="">
@@ -42,9 +42,10 @@
           <label for="inputConfirmPassword" class="sr-only">Confirm Password</label>
           <input type="password" id="inputConfirmPassword" class="form-control" name="CPassword" title="Confirm Password" placeholder="Confirm Password" value="" required>
           <input type="hidden" name="dataInServer" value="false">
-          <button class="btn btn-lg btn-primary btn-color btn-block" type="submit">Sign up</button>
-          <p class="font-size mt-3">Already a Member, <a href="signin.html">Signin here</a></p>
+          <button class="button" type="submit">Sign up</button>
+          <p class="font-size mt-3">Already a Member, <a href="/signin">Signin here</a></p>
         </form>
+        <div class="col-sm-1" style="display: none;" ></div>
       </div>
       <p class="mt-2 mb-3 text-muted" id="demo">© 2020-2021</p>
     </div>
