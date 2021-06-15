@@ -43,22 +43,11 @@ body {
   2px 2px 7px #000000d0;
 }
 
-/* a{
-  color: var(--mainTextColor);
-}
-
-a:hover{
-  color: var(--mainTextColor);
-}
-
-a:visited{
-  color: var(--mainvTextColor);
-} */
-
 .form-signup {
   width: 100%;
   max-width: 800px;
-  padding: 55px;
+  padding: 60px;
+  padding-top: 35px;
   padding-bottom: 0px;
   margin: 0 auto;
   background: #dde1e7;
@@ -78,13 +67,14 @@ a:visited{
   padding: 10px;
   font-size: 16px;
   font-weight: 500;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   background: #dde1e7;
   color: #595959;
   border-radius: 25px;
   box-shadow: inset 2px 2px 5px #BABECC,
               inset -5px -5px 10px #ffffff73;
 }
+
 .form-control:focus {
   color: var(--blue);
   z-index: 2;
@@ -106,7 +96,8 @@ a:visited{
   box-shadow: 3px 3px 6px 2px rgba(0, 0, 0, 0.1), -3px -3px 5px 1px rgba(247, 251, 255, 0.5);
   cursor: pointer;
   height: 15px;
-  margin: 0 16px;
+  margin: 0;
+  margin-right: 5px;
   width: 15px;
 }
 
@@ -118,7 +109,7 @@ input[type=checkbox]{
   background: linear-gradient(-45deg, rgba(247, 251, 255, 0.4) 20%, rgba(0, 128, 255, 0.2) 100%)!important;
 }
 input:checked + .rem {
-  background: linear-gradient(-45deg, rgba(247, 251, 255, 0.4) 20%, rgba(0, 128, 255, 0.6) 100%)!important;
+  background: linear-gradient(-45deg, rgba(0, 128, 255, 0.6) 20%, rgba(247, 251, 255, 0.4) 100%)!important;
 }
 /*Checkbox END*/
 
@@ -156,6 +147,24 @@ box-shadow: inset 8px 8px 22px #0057b5,
   width: 50%;
 }
 
+.alert{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #dde1e7!important;
+  border-color: #dde1e7!important;
+  box-shadow: -3px -3px 10px #ffffff73,
+  2px 2px 7px #000000d0!important;
+  font-size: 12px;
+  color: #cb0e40!important;
+}
+.alert .close{
+  padding: 9px 20px;
+}
+.alert .close:focus{
+  outline: none!important;
+}
+
 @media screen and (max-width: 867px) {
   .form-signup {
     width: 700px;
@@ -169,6 +178,11 @@ box-shadow: inset 8px 8px 22px #0057b5,
 }
 
 @media screen and (max-width: 667px) {
+  body{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    height: fit-content;
+  }
   .form-signup {
     width: 500px;
   }
@@ -204,9 +218,8 @@ box-shadow: inset 8px 8px 22px #0057b5,
     background-color: var(--blue);
     margin: 20px 0;
   }
-}
-.alert{
-  position: absolute;
-  top: 10px;
-  right: 10px;
+  .alert{
+    position: fixed;
+    width: 415px;
+  }
 }

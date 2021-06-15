@@ -18,7 +18,7 @@
   <body class="text-center">
     <div class="container form-signup Montserrat" >
       <div class="row">
-        <div class="col-sm-5 Data" style="margin: auto 0;">
+        <div class="col-md-5 Data" style="margin: auto 0;">
           <img class="mb-4 rounded-circle img" src="{{url_for('static',filename='img/userPhotoBlack.png')}}" alt="User's Photo" title="UserPhoto" width="140" height="140">
           <h3 class="mb-4 font-weight-bold" >Details</h3>
           <label for="Name" class="sr-only">Name</label>
@@ -32,7 +32,7 @@
           <hr class="d-sm-none">
           <div class="line"></div>
         </div>
-        <form class="col-sm-5" name="SignUp" methods="POST" onsubmit="return validateSignup()">
+        <form class="col-md-5" name="SignUp" methods="POST" onsubmit="return validateSignup()">
           <img class="mb-4 img" src="{{url_for('static',filename='img/IconBlack.png')}}" alt="LMS icon" title="Library Management System" width="72" height="72">
           <h3 class="mb-4 font-weight-bold" >Sign Up</h3>
           <label for="inputEmail" class="sr-only">Email address</label>
@@ -48,22 +48,20 @@
         <div class="col-sm-1" style="display: none;" ></div>
       </div>
       <p class="mt-2 mb-3 text-muted" id="demo">© 2020-2021</p>
+      <error></error>
     </div>
-    <div class="Montserrat alert alert-danger alert-dismissible fade show error" role="alert">
-      <strong>ERROR: </strong><span id="alert-text">You should check in on some of those fields below.</span>
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <script>      
+    
+    <script>  
       function error(str){
-        document.getElementById('alert-text').innerHTML += str;
+        var htmlError = '<div class="Montserrat alert alert-danger alert-dismissible fade show text-left" role="alert"><strong>ERROR! </strong><span id="alert-text">$ERROR$</span><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
+        htmlError = htmlError.replace('$ERROR$',str);
+        document.getElementsByTagName('ERROR')[0].innerHTML += htmlError;
       }
       function validateSignup(){
         var email = document.forms["SignUp"]["EmailId"].value;
         var pass = document.forms["SignUp"]["Password"].value;
         var cpass = document.forms["SignUp"]["CPassword"].value;
-        var emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        var emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+){2,3}*$/;
         var passRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
         // console.log(email+" | "+(!email.match(emailRegex))+"\n"+pass+" | "+(!pass.match(passRegex))+"\n"+cpass+" | "+(pass != cpass));
         if(!email.match(emailRegex) ){
