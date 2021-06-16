@@ -23,12 +23,10 @@ body {
   justify-content: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  background: #007bff;
-  /*background: -webkit-linear-gradient(to right, #1CB5E0, #000046);
-  background: linear-gradient(to right, #1CB5E0, #000046); 
-  background: var(--mainTextColor)!important; 
-  background: var(--mainwgradientFunc);
-  background: var(--maingradientFunc); */
+  /* background: #007bff; */
+  background: #23074d;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #cc5333, #23074d);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #cc5333, #23074d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .form-signin {
@@ -126,6 +124,7 @@ input:disabled{
   line-height: 50px;
   font-weight: 600;
   border-radius: 25px;
+  margin-bottom: 10px;
   border: none;
   outline: none;
   cursor: pointer;
@@ -134,12 +133,34 @@ input:disabled{
     box-shadow:  8px 8px 22px #9da0a4,
              -8px -8px 22px #ffffff;
 }
-.button:focus{
+
+.button.Student{
+  background: linear-gradient(145deg, #da5937, #b84b2e);
+  box-shadow:  8px 8px 22px #BABECC73,
+             -8px -8px 22px #ffffff73;
+}
+
+.button.Admin{
+  background: linear-gradient(145deg, #250752, #200645);
+  box-shadow:  8px 8px 22px #BABECC73,
+             -8px -8px 22px #ffffff73;
+}
+
+
+.button.Student:focus{
   border: none;
   outline: none;
-background: #007bff;
-box-shadow: inset 8px 8px 22px #0057b5,
-            inset -8px -8px 22px #009fff;
+background: #cc5333;
+box-shadow: inset 8px 8px 22px #ad472b,
+            inset -8px -8px 22px #eb5f3b;
+}
+
+.button.Admin:focus{
+  border: none;
+  outline: none;
+background: #23074d;
+box-shadow: inset 8px 8px 22px #1e0641,
+            inset -8px -8px 22px #280859;
 }
 .line{
   border-right: 2px solid var(--blue);
