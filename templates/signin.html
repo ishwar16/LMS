@@ -1,32 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>LMS | SignIn</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="{{url_for('static',filename='img/IconWhite.png')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='css/fonts/font.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='css/login.css')}}">
-    <style>
-    </style>
-  </head>
-  <body class="text-center">
-    <form class="form-signin Montserrat" >
-        <img class="mb-4 img" src="{{url_for('static',filename='img/IconBlack.png')}}"  alt="LMS icon" title="Library Management System" width="72" height="72">
-        <h3 class="mb-4 font-weight-bold" >Sign In</h3>
-        <label for="inputEmail" class="sr-only">Email address</label>
-      <input type="email" id="inputEmail" class="form-control" title="Email Address" placeholder="Email address" required="" autofocus="">
-      <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="inputPassword" class="form-control" title="Password" placeholder="Password" required="">
-      <div class="row mb-3">
-        <div class="col align-self-start" >
-          <p style="margin: 0;font-size: 10px;"><input id="rem" name="RememberMe" type="checkbox" class="rem"><label for="rem" class="rem"></label>Remember Me</p>
-        </div>
-      </div>
-      <button class="button Student" type="submit" name="userType" value="STUDENT">Sign in as Student</button>
-      <button class="button Admin" type="submit" name="userType" value="ADMIN">Sign in as Admin</button>
-      <p class="mt-2 mb-3 text-muted">© 2020-2021</p>
-    </form>
-  </body>
+    <head>
+        <title>LMS | SignIn</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="{{url_for('static',filename='img/IconWhite.png')}}">
+        <link rel="stylesheet" href="{{url_for('static',filename='css/fonts/font.css')}}">
+        <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{url_for('static',filename='css/login.css')}}">
+        <script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="{{url_for('static',filename='js/bootstrap.min.js')}}" ></script>
+    </script>
+        <style>
+        </style>
+    </head>
+    <body class="text-center">
+        <form class="form-signin Montserrat" name="SignIn" action="" method="POST" >
+            <img class="mb-4 img" src="{{url_for('static',filename='img/IconBlack.png')}}"  alt="LMS icon" title="Library Management System" width="72" height="72">
+            <h3 class="mb-4 font-weight-bold" >Sign In</h3>
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input type="email" id="inputEmail" class="form-control" name="EmailID" title="Email Address" value="{{ email }}" placeholder="Email address" required autofocus="">
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="inputPassword" class="form-control" name="Password" title="Password" value="{{ password }}" placeholder="Password" required>
+            <div class="row mb-3">
+                <div class="col align-self-start" >
+                    <p style="margin: 0;font-size: 10px;"><input id="rem" name="RememberMe" value="True" type="checkbox" class="rem" {% if rem: %} checked {% endif %} ><label for="rem" class="rem"></label>Remember Me</p>
+                </div>
+            </div>
+            <button class="button Student" type="submit" name="userType" value="STUDENT">Sign in as Student</button>
+            <button class="button Admin" type="submit" name="userType" value="ADMIN">Sign in as Admin</button>
+            <p class="mt-2 mb-3 text-muted">© 2020-2021</p>
+        </form>
+            {% for error in result %}
+        <div class="Montserrat alert alert-danger alert-dismissible fade show text-left" role="alert"><strong>ERROR! </strong><span id="alert-text">{{ error }}</span><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
+            {% endfor %}
+        <script src="{{url_for('static',filename='js/login.js')}}" ></script>
+        <script>
+            // c = {{ result }};
+            // console.log(c);
+        </script>
+    </body>
 </html>
