@@ -22,6 +22,7 @@ class LoginCheck:
         self.emailID = self.isEmpty(emailID,"EmailID was not given.")
         self.password = self.isEmpty(pas,"Password was not given.")
         self.uType = self.isEmpty(uType,"User Type was not given.")
+        print(self.error)
 
     def isEmpty(self, val, errorMessage):
         if val is None:
@@ -32,6 +33,8 @@ class LoginCheck:
         SaltFromPassword = password[:12]
         KeyFromPassword = password[12:]
         newKey = hashlib.pbkdf2_hmac('sha256', self.password.encode('utf-8'), SaltFromPassword, 100000)
+        print("Old Key:"+str(KeyFromPassword))
+        print("New Key:"+str(newKey))
         if (KeyFromPassword == newKey):
             return True
         self.error.append("Given Password is wrong.")
@@ -41,7 +44,9 @@ class LoginCheck:
         if(len(self.error) == 0):
             # query = "SELECT Password FROM "+self.uType+" WHERE 'Email Address' = "+self.emailID
             emailID = "yo123@mail.com"
+            print("in Check")
             if self.emailID == emailID:
+                print("in passcheck")
                 password = b'\xf5+\xdf\xebkX\x8f\xb7|\xed\x85\xd4\xe8H\xac\x12/I\xc7~\x9b9]F\xba\xec\xf5\xd5\x98\xa8\xb5 ^*<)!"\xb4\xe6hIms'
                 if self.__isPassRight(password):
                     self.loginPass = 1
@@ -99,12 +104,14 @@ def signin():
         cookieResult = checkCookie()
         if cookieResult is False:
             if request.method == 'POST':
+                print("dfhfhk")
                 email = request.form.get('EmailID')
                 pas = request.form.get('Password')
                 rem = request.form.get('RememberMe')
                 userType = request.form.get('userType')
                 login = LoginCheck(email,pas,userType)
                 if (login.check() == True):
+                    print("in passed")
                     userID,name = login.getDetails(rem)
                     session['UserID'] = userID
                     session['User'] = name

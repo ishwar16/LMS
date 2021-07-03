@@ -1,0 +1,118 @@
+.fakeimg {
+    height: 200px;
+    background: #aaa;
+  }
+body{
+  background: #dde1e7;
+}
+.autohide{
+    background-color:  #cc5333!important;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    z-index: 99;
+    box-shadow: 5px 5px 9px #00000066,
+                -5px -5px 9px #ffffff66;
+}
+.card{
+    padding: 10px;
+    box-shadow:  5px 5px 6px #b7bbc0,
+                -5px -5px 6px #ffffff;
+}
+
+.scrolled-down{
+    transform:translateY(-100%); transition: all 0.3s ease-in-out;
+}
+.scrolled-up{
+    transform:translateY(1); transition: all 0.3s ease-in-out;
+}
+
+  nav label.bars{
+    display: block;
+  }
+  #check:checked ~ label.bars{
+    display: none;
+  }
+  #check:checked ~ ul label.cancel{
+    display: block;
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+.card{
+    max-width: 18rem;
+}
+.img{
+    margin-right: 10px;
+    border-radius: 50%;
+    transition: 0.5s;
+    background: transparent;
+    box-shadow: 5px 5px 9px #61626566,
+                -5px -5px 9px #ffffff66;
+}
+.img:active{
+    transition: 0.5s;
+    background: linear-gradient(145deg, #b1b3b966, #d3d5dc66);
+    box-shadow:inset 5px 5px 17px #61626566,
+            inset -5px -5px 17px #ffffff66;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    color: white;
+}
+a.text{
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.text::after{
+    content: 'LIBRARY MANAGEMENT SYSTEM';
+}
+.nav-link{
+    text-align: center;
+    margin-left: 20px;
+    padding: 10px;
+    min-width: 100px;
+    border-radius: 10px;
+    background:transparent;
+    border:1px solid #ffffff22;
+    box-shadow: 5px 5px 6px #11121520,
+                -5px -5px 6px #ffffff20;
+}
+.nav-link:active{
+    box-shadow:inset 5px 5px 17px #11121520,
+            inset -5px -5px 17px #ffffff16;
+}
+.active{
+    font-weight: 500;
+    color: #dcdcdc!important;
+}
+@media screen and (max-width:579px){
+    .card{
+        max-width: 100%;
+    }
+    .text::after{
+        content: 'LMS';
+    }
+}
+@media screen and (max-width: 991px){
+    .nav-link{
+        box-shadow: none;
+        border: none;
+        text-align: start;
+    }
+}
+@media (hover: hover) and (pointer: fine) {
+    .img:hover{
+        transition: 0.5s;
+        background: linear-gradient(145deg, #d3d5dc66, #b1b3b966);
+    }
+    .active:hover{
+        color: #ffffff!important;
+    }
+}
